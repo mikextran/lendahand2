@@ -1,0 +1,102 @@
+<section>
+  <div class="page-header">
+  </div>
+  <div class="col-md-9 col-md-offset-1">
+    <form name="vm.form.postForm" class="form-horizontal" ng-submit="vm.save(vm.form.postForm.$valid)" novalidate>
+      <fieldset>
+        <div class="row">
+          <div ng-show="vm.error" class="text-danger text-center" >
+            <strong ng-bind="vm.error"></strong>
+          </div>
+          <div class="col-md-2">
+            <div ng-if="vm.post.user">
+              <img class="profileimage" data-ng-src="{{vm.post.user.profileImageURL}}"></img>
+              <br>
+              <span ng-bind="vm.post.user.displayName"></span>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <h3 align="center">{{vm.post._id ? 'Edit Your Service' : 'New Service Post'}}</h3>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="title">Title</label>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="title" type="text" ng-model="vm.post.title" id="title" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="description">Description</label>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="description" type="text" ng-model="vm.post.description" id="description" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="time">Time</label>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="Time" type="date" ng-model="vm.post.time" id="time" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="location">Location</label>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="Location" type="text" ng-model="vm.post.location" id="location" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="price">Price</label>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="Price" type="number" ng-model="vm.post.price" id="price" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="service">Service</label><br>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="Service" type="text" ng-model="vm.post.service" id="service" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="col-xs-12 col-md-2">
+              <label class="post-label" for="status">Status</label>
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <input name="Status" type="text" ng-model="vm.post.status" id="status" class="form-control">
+              <div ng-messages="vm.form.postForm.name.$error" role="alert">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" align="right">
+          <button type="submit" class="btn btn-default">{{vm.post._id ? 'Update' : 'Create'}}</button>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-2">{{vm.post._id ? 'Posted' : ''}}
+        <div ng-bind="vm.post.created | date:'mediumDate'"></div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+</section>

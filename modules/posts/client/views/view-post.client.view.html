@@ -1,0 +1,58 @@
+<section>
+  <div class="page-header">
+  </div>
+  <div class="list-group">
+    <div class="list-group-item-text">
+      <div class="col-md-2">
+        <img class="profileimage" data-ng-src="{{vm.post.user.profileImageURL}}"></img>
+        <br>
+        <span ng-if="vm.post.user" ng-bind="vm.post.user.displayName"></span>
+      </div>
+      <div class="col-md-10">
+        <a ui-sref="posts.view({ postId: post._id })">
+        <div class="col-md-9" style="min-height:80px;">
+          <h3 class="list-group-item-heading" ng-bind="vm.post.title"></h3>
+          </a>
+          <h5 ng-bind="vm.post.description"></h5>
+        </div>
+        <div class="col-md-3" style="min-height:80px;">
+          <div ng-bind="vm.post.created | date:'mediumDate'" align="right"></div>
+        </div>
+
+          <div class="col-md-11" align="right">
+            <span class="list-group-item-heading" ng-bind="vm.post.location"></span>
+          </div>
+          <div class="col-md-1">
+           <span>$ </span>
+           <span ng-bind="vm.post.price" align="right"></span>
+         </div>
+        <div class="col-md-12" style="margin-top: 15px;">
+        <a><div class="post-links"> Like </div></a>
+        <a><div class="post-links"> Comment </div></a>
+        <a><div class="post-links"> Share </div></a>
+        <a><div class="post-links"> Report </div></a>
+      </div>
+      <div class="pull-right"
+           ng-show="vm.post.isCurrentUserOwner">
+        <a class="btn btn-primary"
+           ui-sref="posts.edit({ postId: vm.post._id })">
+          <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" ng-click="vm.remove()">
+          <i class="glyphicon glyphicon-trash"></i>
+        </a>
+      </div>
+      </div>
+
+    </div>
+
+      <div class="container">
+    <div class="row" ui-view="replies"></div>
+  </div>
+
+    </div>
+
+
+
+
+</section>
