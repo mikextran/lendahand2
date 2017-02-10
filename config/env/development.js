@@ -32,7 +32,7 @@ module.exports = {
     }
   },
   app: {
-    title: defaultEnvConfig.app.title + ' - Development Environment'
+    title: defaultEnvConfig.app.title + ' - LendAHand Development Environment'
   },
   facebook: {
     clientID: process.env.FACEBOOK_ID || 'APP_ID',
